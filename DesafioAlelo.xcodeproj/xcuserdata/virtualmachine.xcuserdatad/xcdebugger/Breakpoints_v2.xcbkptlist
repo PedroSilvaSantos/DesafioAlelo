@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "F30EB6D1-32D9-42AE-AB0C-EC0B46F5DABE"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3430EBB4-0D6C-495B-A9D7-C1D34BACB809"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DesafioAlelo/Controller/ProductListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "didTapCartButton()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3430EBB4-0D6C-495B-A9D7-C1D34BACB809 - 64c259b8d37361ce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DesafioAlelo.ProductListViewController.setupTitleLabel() -&gt; ()"
+                  moduleName = "DesafioAlelo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/virtualmachine/Documents/Learning/DesafioAlelo/DesafioAlelo/Controller/ProductListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "102"
+                  endingLineNumber = "102"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "3430EBB4-0D6C-495B-A9D7-C1D34BACB809 - 2534c965a164931f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DesafioAlelo.ProductListViewController.didTapCartButton() -&gt; ()"
+                  moduleName = "DesafioAlelo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/virtualmachine/Documents/Learning/DesafioAlelo/DesafioAlelo/Controller/ProductListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "3430EBB4-0D6C-495B-A9D7-C1D34BACB809 - a31e4874b8070a34"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "implicit closure #1 (DesafioAlelo.ProductListViewController) -&gt; () -&gt; () in DesafioAlelo.ProductListViewController.didTapCartButton() -&gt; ()"
+                  moduleName = "DesafioAlelo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/virtualmachine/Documents/Learning/DesafioAlelo/DesafioAlelo/Controller/ProductListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "3430EBB4-0D6C-495B-A9D7-C1D34BACB809 - f423ca43e3493b85"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "implicit closure #2 () -&gt; () in implicit closure #1 (DesafioAlelo.ProductListViewController) -&gt; () -&gt; () in DesafioAlelo.ProductListViewController.didTapCartButton() -&gt; ()"
+                  moduleName = "DesafioAlelo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/virtualmachine/Documents/Learning/DesafioAlelo/DesafioAlelo/Controller/ProductListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BB29F92D-2BC3-49F8-ABBE-D5C4EBAEE48E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DesafioAlelo/View/CartButtonView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "didTapCartButton()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BB29F92D-2BC3-49F8-ABBE-D5C4EBAEE48E - ec86c8c5b82741a6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DesafioAlelo.CartButtonView.setupCart() -&gt; ()"
+                  moduleName = "DesafioAlelo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/virtualmachine/Documents/Learning/DesafioAlelo/DesafioAlelo/View/CartButtonView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "1844">
+               </Location>
+               <Location
+                  uuid = "BB29F92D-2BC3-49F8-ABBE-D5C4EBAEE48E - ddbd9ff8f56452fe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DesafioAlelo.CartButtonView.didTapCartButton() -&gt; ()"
+                  moduleName = "DesafioAlelo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/virtualmachine/Documents/Learning/DesafioAlelo/DesafioAlelo/View/CartButtonView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
