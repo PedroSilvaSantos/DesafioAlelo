@@ -16,7 +16,7 @@ class ShoppingCartViewModel {
     }
     
     func removeFromCart(product: Product) {
-        shoppingCart.removeItem(product: product)
+        shoppingCart.removeQuantity(of: product, quantity: 1)
     }
     
     func removeAllCart() {

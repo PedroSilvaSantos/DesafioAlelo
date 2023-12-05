@@ -14,7 +14,7 @@ protocol ProductViewModelDelegate {
 
 class ProductViewModel {
     
-    private var listProducts: [Product]?
+    private var listProducts: [Product] = []
     private var delegate:ProductViewModelDelegate?
     
     public func delegate(delegate:ProductViewModelDelegate?) {
@@ -41,11 +41,11 @@ class ProductViewModel {
     }
 
     var numberOfRowsInProducts: Int {
-        return listProducts?.count ?? 0
+        return listProducts.count
     }
     
     public func loadProducts(indexPath: IndexPath) -> Product? {
-        return self.listProducts?[indexPath.row]
+        return self.listProducts[indexPath.row]
     }
 }
 

@@ -48,7 +48,6 @@ extension ShoppingCartViewController: UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: ShoppingCartTableViewCell.identifier, for: indexPath) as? ShoppingCartTableViewCell
         let item = cartViewModel.shoppingCart.items[indexPath.row]
         cell?.delegate = self
-        delegateNumberOfItems?.updateCartItemCount(newCount: item.quantity)
         cell?.shoppingCartItem = item
         cell?.configure(with: item)
         
@@ -94,25 +93,31 @@ extension ShoppingCartViewController: UITableViewDelegate {
 extension ShoppingCartViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return  cartViewModel.shoppingCart.items.count
+        return cartViewModel.shoppingCart.items.count
     }
 }
 
 extension ShoppingCartViewController: ShoppingCartTableViewDelegate {
     
     func didTapTrashButton() {
-        cartViewModel.removeAllCart()
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.cartViewModel.removeAllCart()
+            self.updateTableView()
+        }
     }
     
     func didTapMinusButton(forItem item: ShoppingCartItem) {
-        cartViewModel.removeFromCart(product: item.product)
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.cartViewModel.removeFromCart(product: item.product)
+            self.updateTableView()
+        }
     }
     
     func didTtapPlusButton(forItem item: ShoppingCartItem) {
-        cartViewModel.addToCart(product: item.product, quantity: 1)
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.cartViewModel.addToCart(product: item.product, quantity: 1)
+            self.updateTableView()
+        }
     }
 }
 

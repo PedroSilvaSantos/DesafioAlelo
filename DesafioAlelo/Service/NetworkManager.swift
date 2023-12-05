@@ -21,7 +21,7 @@ class APIClient {
 
     private init() {}
 
-    func fetchProducts(from url: URL, completion: @escaping (Result<[Product]?, CustomError>) -> Void) {
+    func fetchProducts(from url: URL, completion: @escaping (Result<[Product], CustomError>) -> Void) {
         URLSession.shared.dataTask(with: url) { [weak self] (data, _, error) in
             guard self != nil else { return }
             if error != nil {

@@ -25,17 +25,8 @@ class ShoppingCart {
         }
     }
     
-    private func saveItems() {
-        if let encodedData = try? JSONEncoder().encode(items) {
-            UserDefaults.standard.set(encodedData, forKey: "shoppingCartItems")
-        }
-    }
-    
-    
     func addItem(product: Product, quantity: Int) {
-        
         let existingItem = items.first { $0.product.id == product.id }
-        
         if let existingItem = existingItem {
             let updatedItem = ShoppingCartItem(product: existingItem.product, quantity: existingItem.quantity + quantity)
             if let index = items.firstIndex(of: existingItem) {
@@ -48,13 +39,29 @@ class ShoppingCart {
         saveItems()
     }
     
-    func removeItem(product: Product) {
-        items.removeAll { $0.product.id == product.id }
-        saveItems()
-    }
+    func removeQuantity(of product: Product, quantity: Int) {
+            guard let existingItem = items.first(where: { $0.product.id == product.id }) else {
+                return
+            }
+            if existingItem.quantity > quantity {
+                let updatedItem = ShoppingCartItem(product: existingItem.product, quantity: existingItem.quantity - quantity)
+                if let index = items.firstIndex(of: existingItem) {
+                    items[index] = updatedItem
+                }
+            } else {
+                items.removeAll { $0.product.id == product.id }
+            }
+                saveItems()
+        }
     
     func calculateTotalItems() -> Double {
         guard !items.isEmpty else { return 0.0 }
         return items.reduce(0.0) { $0 + $1.totalPrice}
+    }
+    
+    private func saveItems() {
+        if let encodedData = try? JSONEncoder().encode(items) {
+            UserDefaults.standard.set(encodedData, forKey: "shoppingCartItems")
+        }
     }
 }
