@@ -11,7 +11,7 @@ struct ProductList: Model {
 }
 
 struct Product: Model, Identifiable {
-    let id = UUID()
+    var id = UUID()
     let name: String
     let style: String
     let codeColor: String
@@ -24,7 +24,7 @@ struct Product: Model, Identifiable {
     let installments: String
     let image: String
     let sizes: [Size]
-
+    
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -40,6 +40,26 @@ struct Product: Model, Identifiable {
         case installments
         case image
         case sizes
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.name = try container.decode(String.self, forKey: .name)
+        self.style = try container.decode(String.self, forKey: .style)
+        self.codeColor = try container.decode(String.self, forKey: .codeColor)
+        self.colorSlug = try container.decode(String.self, forKey: .colorSlug)
+        self.color = try container.decode(String.self, forKey: .color)
+        self.onSale = try container.decode(Bool.self, forKey: .onSale)
+        self.regularPrice = try container.decode(String.self, forKey: .regularPrice)
+        self.actualPrice = try container.decode(String.self, forKey: .actualPrice)
+        self.discountPercentage = try container.decode(String.self, forKey: .discountPercentage)
+        self.installments = try container.decode(String.self, forKey: .installments)
+        self.image = try container.decode(String.self, forKey: .image)
+        self.sizes = try container.decode([Size].self, forKey: .sizes)
+        if let idString = try container.decodeIfPresent(String.self, forKey: .id),
+           let uuid = UUID(uuidString: idString) {
+            id = uuid
+        }
     }
 }
 

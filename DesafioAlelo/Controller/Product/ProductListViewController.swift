@@ -30,6 +30,7 @@ class ProductListViewController: UICollectionViewController {
         setupTitleLabel()
         setupCart()
         navigationItem.title = "Categoria"
+        productViewModel.delegate(delegate: self)
         setupRefreshControl()
     }
     
@@ -122,7 +123,7 @@ extension ProductListViewController: UICollectionViewDelegateFlowLayout {
 
 extension ProductListViewController: ProductViewModelDelegate {
     func success() {
-        print("Lista carregado com sucesso!")
+        collectionView.reloadData()
     }
     
     func fail() {
