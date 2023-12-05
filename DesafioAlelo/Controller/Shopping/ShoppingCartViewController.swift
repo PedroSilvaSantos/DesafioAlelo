@@ -108,14 +108,18 @@ extension ShoppingCartViewController: ShoppingCartTableViewDelegate {
     
     func didTapMinusButton(forItem item: ShoppingCartItem) {
         DispatchQueue.main.async {
-            self.cartViewModel.removeFromCart(product: item.product)
-            self.updateTableView()
+            if item.quantity > 0 {
+                self.cartViewModel.removeFromCart(product: item.product)
+                Manager.shared.quantityInCart -= 1
+                self.updateTableView()
+            }
         }
     }
     
     func didTtapPlusButton(forItem item: ShoppingCartItem) {
         DispatchQueue.main.async {
             self.cartViewModel.addToCart(product: item.product, quantity: 1)
+            Manager.shared.quantityInCart += 1
             self.updateTableView()
         }
     }

@@ -8,5 +8,18 @@
 import Foundation
 
 extension Notification.Name {
-    static let carrinhoAtualizado = Notification.Name("CarrinhoAtualizado")
+    static let updatedCart = Notification.Name("updatedCart")
+}
+
+
+class Manager {
+    static let shared = Manager()
+    
+    var quantityInCart: Int = 0 {
+        didSet {
+            NotificationCenter.default.post(name: .updatedCart, object: nil)
+        }
+    }
+    
+    private init() {}
 }

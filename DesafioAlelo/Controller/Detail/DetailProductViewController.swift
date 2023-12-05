@@ -120,6 +120,7 @@ extension DetailProductViewController: DetailSelectedProductDelegate {
         loadingView.startLoading()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.cartViewModel.addToCart(product: item, quantity: 1)
+            Manager.shared.quantityInCart += 1
             self.loadingView.stopLoading()
         }
     }

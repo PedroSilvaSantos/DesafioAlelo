@@ -30,8 +30,13 @@ class ProductListViewController: UICollectionViewController {
         setupTitleLabel()
         setupCart()
         navigationItem.title = "Categoria"
+        NotificationCenter.default.addObserver(self, selector: #selector(updateCartItemCount), name: .updatedCart, object: nil)
         productViewModel.delegate(delegate: self)
         setupRefreshControl()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .updatedCart, object: nil)
     }
     
     private func setupCollectionView() {
@@ -72,7 +77,6 @@ class ProductListViewController: UICollectionViewController {
     
     @objc func cartButtonTapped() {
         let vc = ShoppingCartViewController()
-        vc.delegateNumberOfItems = self
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -156,9 +160,9 @@ extension ProductListViewController {
     }
 }
 
-extension ProductListViewController: ProtocolNumberOfItemsIncluded {
+extension ProductListViewController {
     
-    func updateCartItemCount(newCount: Int) {
-        cartItemCount = newCount
+    @objc func updateCartItemCount() {
+        cartItemCount = Manager.shared.quantityInCart
     }
 }
